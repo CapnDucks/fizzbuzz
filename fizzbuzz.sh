@@ -22,5 +22,8 @@ do
    else
     echo "$x"
   fi
-  x=$(( $x + 1 ))
+  # Add 1
+  #i=$((i+1))
+  #(( i=i+1 ))
+  let "i=i+1"
 done
