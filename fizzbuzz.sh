@@ -4,20 +4,20 @@
 # multiples of 3 to become "fizz" and multiples of 5 "buzz".
 # If a number is both a multiple of 3 and 5 it should become "fizzbuzz".
 
-# Start Counting at 1
+# Start the loop
 for x in {1..100}
 do
+# Check if divide by 3 AND 5
   if [[ 0 -eq "($x%3) + ($x%5)" ]]
   then
-  # Check if divide by 3 & 5 #
     echo "fizz buzz"
+# Check if divide by 5
   elif [[ 0 -eq "($x%5)" ]]
   then
-  # Check if divide by 5 #
     echo "buzz"
+# Check if divide by 3
   elif [[ 0 -eq "($x%3)" ]]
   then
-  # Check if divide by 3 #
     echo "fizz"
    else
     echo "$x"
