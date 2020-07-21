@@ -7,20 +7,26 @@
 # Start the loop
 for x in {1..100}
 do
-# Check if divide by 3 AND 5
-  if [[ 0 -eq "($x%3) + ($x%5)" ]]
+	# Check if divide by 3 AND 5 leaves modulus 0
+  if [[ "($x%3) + ($x%5)" -eq 0 ]]
   then
     echo "fizz buzz"
-# Check if divide by 5
-  elif [[ 0 -eq "($x%5)" ]]
-  then
-    echo "buzz"
-# Check if divide by 3
-  elif [[ 0 -eq "($x%3)" ]]
+# Check if divide by 3 leaves modulus 0
+  elif [[ "($x%3)" -eq 0 ]]
   then
     echo "fizz"
+# Check if divide by 5 leaves modulus 0
+  elif [[ "($x%5)" -eq 0 ]]
+  then
+    echo "buzz"
    else
     echo "$x"
   fi
-  x=$(( $x + 1 ))
+  # all the ways to increment
+  #let "i+=1"
+  #i=$((i+1))
+  #((i=i+1))
+  let "i=i+1"
+  #let "++i"
+  #let "i++"
 done
